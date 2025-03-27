@@ -291,10 +291,10 @@
         <!-- About Me Section -->
         <section id="about" class="active">
             <h2>About Me</h2>
-            <pre ><center><h3>Hello! I'm Khyathi, a passionate Computer Science Engineering 
-                specializing web developer  in front-end design and development.
+            <pre ><center><h3>Hello! I'm Khyathi, 
+                a passionate web developer specializing in front-end design and development.
                  I love creating interactive, responsive, and visually stunning websites.
-                 Currenty, I'm pursing my studies at  Sasi Institute of Technology & Engineering.</h3></center></pre>
+                  My expertise includes HTML, CSS, JavaScript, and Python.</h3></center></pre>
             
             
         </section>
@@ -305,22 +305,22 @@
             <div class="skills-list">
                 <div class="skill-item">
                     <i class="fab fa-html5"></i>
-                    <h3>HTML</h3>
+                    <h3>HTML5</h3>
                     <p>Semantic & accessible web structures.</p>
                     <div class="skill-bar-container">
                     </div>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-css3-alt"></i>
-                    <h3>CSS</h3>
+                    <h3>CSS3</h3>
                     <p>Modern layouts & animations.</p>
                     <div class="skill-bar-container">
                     </div>
                 </div>
                 <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <h3>C Language</h3>
-                    <p>System programming & algorithms.</p>
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Interactive web applications.</p>
                     <div class="skill-bar-container">
                     </div>
                 </div>
@@ -400,4 +400,27 @@
                         targetSection.classList.add('active');
                     }, 10);
                     
-                    
+                    // Animate skill bars when skills section is shown
+                    if (target === 'skills') {
+                        animateSkillBars();
+                    }
+                });
+            });
+            
+            // Animate skill bars
+            function animateSkillBars() {
+                const skillBars = document.querySelectorAll('.skill-bar');
+                skillBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width;
+                });
+            }
+            
+            // Initialize skill bars if we're already on skills section
+            if (window.location.hash === '#skills') {
+                animateSkillBars();
+            }
+        });
+    </script>
+</body>
+</html>
